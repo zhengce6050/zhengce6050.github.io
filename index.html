@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="郑策 — 个人主页，AI 实习应聘｜自媒体与新闻数据方向" />
+  <title>郑策 — 个人主页</title>
+  <style>
+    :root{
+      --accent:#3b82f6;
+      --bg:#fbfdff;
+      --text:#0f172a;
+      --muted:#54606f;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+    .container{max-width:900px;margin:0 auto;padding:40px 20px;}
+    .header{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+    .name{font-size:2.2rem;font-weight:700;line-height:1}
+    .tagline{color:var(--muted);font-size:1rem}
+    .section{margin-top:44px}
+    .section h2{font-size:1.05rem;margin:0 0 12px 0;border-left:4px solid var(--accent);padding-left:12px}
+    .about p{margin:8px 0;color:var(--muted);line-height:1.6}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
+    .card{background:#fff;border-radius:8px;padding:16px;box-shadow:0 1px 4px rgba(16,24,40,0.05);border:1px solid rgba(16,24,40,0.04)}
+    .card h3{margin:0 0 8px 0;font-size:1rem}
+    .card p{margin:0;color:var(--muted);font-size:0.95rem}
+    .contact .list{display:flex;flex-direction:column;gap:8px;color:var(--muted)}
+    .contact a{color:var(--accent);text-decoration:none}
+    .footer{margin-top:48px;padding:20px 0;color:var(--muted);font-size:0.9rem;text-align:center}
+    @media (max-width:420px){.name{font-size:1.6rem}.container{padding:28px 16px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner" aria-label="页眉">
+      <div class="name">郑策</div>
+      <div class="tagline">西雅图华盛顿大学 · 大四 — 寻找 AI 相关实习；有自媒体运营经验。</div>
+    </header>
+
+    <main>
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">关于我</h2>
+        <p>我叫郑策，目前就读于西雅图华盛顿大学，大四。</p>
+        <p>我对人工智能与新闻、内容创作的交叉应用很感兴趣，正在学习相关技术与数据分析。</p>
+        <p>我希望在实习中参与 AI 产品或数据分析相关工作，并把自媒体经验带入内容策略与传播。</p>
+      </section>
+
+      <section class="section work" id="work" aria-labelledby="work-title">
+        <h2 id="work-title">我的作品</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>自媒体内容系列</h3>
+            <p>负责选题、脚本与剪辑，聚焦议题传播与受众增长。（请把这里替换为你的网盘或平台链接）</p>
+          </article>
+
+          <article class="card">
+            <h3>新闻专题与数据分析</h3>
+            <p>基于数据的短期专题报道，包含数据可视化与深度解读。（请替换为项目链接或 PDF）</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">联系方式</h2>
+        <div class="list">
+          <div>邮箱：<a href="mailto:zhengce6050@gmail.com">zhengce6050@gmail.com</a></div>
+          <div>作品链接：在作品卡片中放置网盘或平台链接；或在简历 PDF 中放完整收藏夹链接。</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      小提示：把此文件命名为 index.html，上传到 GitHub 仓库并启用 Pages 即可发布。
+    </footer>
+  </div>
+</body>
+</html>
