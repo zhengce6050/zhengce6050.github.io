@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="郑策的个人主页——华盛顿大学新闻专业学生，关注 AI、内容与传播，正在寻找 AI 相关实习机会。">
+  <meta name="description" content="郑策的个人主页——华盛顿大学环境科学和信息专业学生，关注 AI、产品与内容，正在寻找 AI 相关实习机会。">
   <meta name="theme-color" content="#f7f9fc">
-  <title>郑策｜新闻、内容与 AI</title>
+  <title>郑策｜环境、信息与 AI</title>
   <style>
     :root {
       --background: #f7f9fc;
@@ -79,7 +79,7 @@
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
+      align-items: center;
       gap: 48px;
       padding: 96px 0 88px;
     }
@@ -114,13 +114,53 @@
       letter-spacing: -0.02em;
     }
 
-    .hero-mark {
-      width: 96px;
-      height: 96px;
-      border: 1px solid #cdd9f3;
-      border-radius: 28px 28px 28px 6px;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .primary-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      color: #ffffff;
+      background: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.2);
+    }
+
+    .primary-link:hover,
+    .primary-link:focus-visible {
+      background: #1d4ed8;
+      outline: 3px solid rgba(37, 99, 235, 0.18);
+      outline-offset: 3px;
+    }
+
+    .avatar {
+      position: relative;
+      width: 168px;
+      height: 168px;
+      overflow: hidden;
+      border: 8px solid var(--surface);
+      border-radius: 50%;
       background: var(--accent-soft);
-      box-shadow: inset 0 0 0 12px var(--surface);
+      box-shadow: 0 0 0 1px var(--line), var(--shadow);
+    }
+
+    .avatar img {
+      position: absolute;
+      width: 260%;
+      max-width: none;
+      height: auto;
+      top: -64%;
+      left: -174%;
     }
 
     section {
@@ -161,8 +201,7 @@
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 22px;
     }
 
     .card {
@@ -193,6 +232,165 @@
       color: var(--muted);
       font-size: 15px;
       line-height: 1.7;
+    }
+
+    .project-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(240px, 0.92fr);
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .project-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding: 42px;
+    }
+
+    .project-type {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-copy h3 {
+      margin: 0 0 14px;
+      font-size: clamp(25px, 4vw, 34px);
+      letter-spacing: -0.04em;
+    }
+
+    .project-copy > p:not(.project-type) {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .metric {
+      padding: 8px 11px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      object-position: top center;
+      border-left: 1px solid var(--line);
+      background: #eef1ed;
+    }
+
+    .project-feature:nth-child(even) .project-copy { order: 2; }
+    .project-feature:nth-child(even) .project-image {
+      order: 1;
+      border-right: 1px solid var(--line);
+      border-left: 0;
+    }
+
+    .life-intro {
+      max-width: 660px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .interest-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .interest-card {
+      position: relative;
+      min-width: 0;
+      height: 330px;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #dfe5ee;
+      box-shadow: var(--shadow);
+    }
+
+    .interest-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .interest-card.car {
+      grid-column: 1 / -1;
+      height: 360px;
+    }
+    .interest-card.car img { object-position: center 54%; }
+    .interest-card.basketball img { object-position: 45% center; }
+    .interest-card.golf img { object-position: center 58%; }
+
+    .interest-caption {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      left: 14px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 12px;
+      color: #ffffff;
+      background: rgba(18, 27, 42, 0.62);
+      backdrop-filter: blur(10px);
+    }
+
+    .interest-caption strong {
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+
+    .interest-caption span {
+      color: rgba(255,255,255,0.74);
+      font-size: 11px;
+    }
+
+    .interest-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .interest-list span {
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: var(--background);
+      font-size: 13px;
+      font-weight: 650;
     }
 
     .contact-box {
@@ -241,22 +439,54 @@
       .nav-links { gap: 14px; font-size: 13px; }
       .hero {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 30px;
         padding: 72px 0 64px;
       }
-      .hero-mark { display: none; }
+      .avatar {
+        grid-row: 1;
+        width: 118px;
+        height: 118px;
+        border-width: 6px;
+      }
+      .hero > div:first-child { grid-row: 2; }
       section { padding: 60px 0; }
       .section-grid { grid-template-columns: 1fr; gap: 22px; }
       .projects { grid-template-columns: 1fr; }
+      .project-feature,
+      .life-card { grid-template-columns: 1fr; }
+      .project-copy { padding: 28px; }
+      .project-image {
+        min-height: 0;
+        height: 460px;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+      .project-feature:nth-child(even) .project-copy { order: 1; }
+      .project-feature:nth-child(even) .project-image {
+        order: 2;
+        border-top: 1px solid var(--line);
+        border-right: 0;
+      }
+      .interest-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      .interest-card { height: 280px; }
+      .interest-card.car { height: 270px; }
+      .interest-card.golf { grid-column: 1 / -1; height: 220px; }
       .contact-box { align-items: flex-start; flex-direction: column; padding: 26px; }
       footer { flex-direction: column; gap: 8px; }
     }
 
     @media (max-width: 390px) {
       .nav-links a:first-child { display: none; }
+      .nav-links { gap: 12px; }
       h1 { font-size: 52px; }
       .intro { font-size: 18px; }
       .card { padding: 24px; }
+      .interest-gallery { grid-template-columns: 1fr; }
+      .interest-card,
+      .interest-card.golf { grid-column: auto; height: 300px; }
+      .interest-card.car { grid-column: auto; height: 255px; }
     }
   </style>
 </head>
@@ -267,6 +497,7 @@
       <div class="nav-links">
         <a href="#about">关于我</a>
         <a href="#work">我的作品</a>
+        <a href="#life">生活之外</a>
         <a href="#contact">联系方式</a>
       </div>
     </nav>
@@ -275,9 +506,14 @@
       <div>
         <p class="eyebrow">正在寻找 AI 相关实习</p>
         <h1>郑策</h1>
-        <p class="intro">华盛顿大学新闻专业学生，关注 AI、内容与传播，也拥有自媒体创作经验。</p>
+        <p class="intro">华盛顿大学环境科学和信息专业学生，正在用 AI 做产品，也在用内容连接真实需求。</p>
+        <div class="hero-actions">
+          <a class="primary-link" href="mailto:zhengce6050@gmail.com?subject=%E5%AE%9E%E4%B9%A0%E6%9C%BA%E4%BC%9A%E4%BA%A4%E6%B5%81">联系我</a>
+        </div>
       </div>
-      <div class="hero-mark" aria-hidden="true"></div>
+      <div class="avatar">
+        <img src="zhengce-photo.jpg" alt="郑策头像">
+      </div>
     </header>
 
     <main>
@@ -286,9 +522,9 @@
           <p class="section-label">About</p>
           <div class="about-copy">
             <h2 id="about-title">关于我</h2>
-            <p>我叫郑策，目前就读于西雅图华盛顿大学，是一名大四新闻专业学生。</p>
-            <p>我正在学习如何把新闻叙事、内容创作与人工智能工具结合起来。</p>
-            <p>我希望加入 AI 相关团队，在真实项目中贡献内容洞察、自媒体经验与传播能力。</p>
+            <p>我叫郑策，目前就读于西雅图华盛顿大学，是一名大四环境科学和信息专业学生。</p>
+            <p>我正在学习如何把环境视角、信息技术、内容创作与人工智能工具结合起来，并把想法做成真实产品。</p>
+            <p>我希望加入 AI 相关团队，贡献内容洞察、用户视角与自媒体实践经验。</p>
           </div>
         </div>
       </section>
@@ -299,16 +535,57 @@
           <div>
             <h2 id="work-title">我的作品</h2>
             <div class="projects">
-              <article class="card">
-                <span class="card-number">01</span>
-                <h3>自媒体内容创作</h3>
-                <p>从选题、脚本到发布，持续实践面向真实受众的内容表达与传播。</p>
+              <article class="project-feature">
+                <div class="project-copy">
+                  <p class="project-type">AI Product · 01</p>
+                  <h3>「开个啥」AI 选车小程序</h3>
+                  <p>把模糊的购车需求转化为清晰、可解释的车型建议，让用户找到最适合自己的车，而不只是最贵的车。</p>
+                  <div class="metrics" aria-label="项目数据">
+                    <span class="metric">2,657 款车型</span>
+                    <span class="metric">172 个品牌</span>
+                    <span class="metric">75 项数据维度</span>
+                  </div>
+                </div>
+                <img class="project-image" src="ai-car-advisor.jpg" alt="开个啥 AI 选车小程序首页截图" loading="lazy">
               </article>
-              <article class="card">
-                <span class="card-number">02</span>
-                <h3>AI × 新闻实践</h3>
-                <p>探索人工智能工具在信息整理、内容生产与新闻传播场景中的应用。</p>
+
+              <article class="project-feature">
+                <div class="project-copy">
+                  <p class="project-type">Content Practice · 02</p>
+                  <h3>「Ce测车」抖音账号</h3>
+                  <p>围绕汽车兴趣进行选题、拍摄与内容发布，从真实反馈中理解受众，也持续练习短视频表达。</p>
+                  <div class="metrics" aria-label="账号信息">
+                    <span class="metric">汽车内容</span>
+                    <span class="metric">选题与拍摄</span>
+                    <span class="metric">账号运营</span>
+                  </div>
+                </div>
+                <img class="project-image" src="douyin-profile.jpg" alt="Ce测车抖音账号主页截图" loading="lazy">
               </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="life" aria-labelledby="life-title">
+        <div class="section-grid">
+          <p class="section-label">Beyond Work</p>
+          <div>
+            <h2 id="life-title">生活之外</h2>
+            <p class="life-intro">镜头之外，我喜欢研究汽车，也享受高尔夫和篮球带来的专注、判断与团队感。运动让我保持能量，也让我对不同圈层的人和故事始终好奇。</p>
+            <div class="interest-gallery">
+              <figure class="interest-card car">
+                <img src="car-life.jpg" alt="郑策参观汽车展厅" loading="lazy">
+                <figcaption class="interest-caption"><strong>汽车</strong><span>好奇与观察</span></figcaption>
+              </figure>
+              <figure class="interest-card basketball">
+                <img src="basketball-life.jpg" alt="郑策参加篮球比赛" loading="lazy">
+                <figcaption class="interest-caption"><strong>篮球</strong><span>协作与对抗</span></figcaption>
+              </figure>
+              <figure class="interest-card golf">
+                <img src="golf-life.jpg" alt="高尔夫练习场" loading="lazy">
+                <figcaption class="interest-caption"><strong>高尔夫</strong><span>专注与节奏</span></figcaption>
+              </figure>
             </div>
           </div>
         </div>
