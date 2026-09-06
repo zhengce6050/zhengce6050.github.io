@@ -1,77 +1,336 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="郑策 — 个人主页，AI 实习应聘｜自媒体与新闻数据方向" />
-  <title>郑策 — 个人主页</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="郑策的个人主页——华盛顿大学新闻专业学生，关注 AI、内容与传播，正在寻找 AI 相关实习机会。">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>郑策｜新闻、内容与 AI</title>
   <style>
-    :root{
-      --accent:#3b82f6;
-      --bg:#fbfdff;
-      --text:#0f172a;
-      --muted:#54606f;
+    :root {
+      --background: #f7f9fc;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #647084;
+      --accent: #2563eb;
+      --accent-soft: #eaf1ff;
+      --line: #dfe5ee;
+      --shadow: 0 18px 50px rgba(40, 55, 85, 0.08);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
-    .container{max-width:900px;margin:0 auto;padding:40px 20px;}
-    .header{display:flex;flex-direction:column;gap:8px;padding-top:6px}
-    .name{font-size:2.2rem;font-weight:700;line-height:1}
-    .tagline{color:var(--muted);font-size:1rem}
-    .section{margin-top:44px}
-    .section h2{font-size:1.05rem;margin:0 0 12px 0;border-left:4px solid var(--accent);padding-left:12px}
-    .about p{margin:8px 0;color:var(--muted);line-height:1.6}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
-    .card{background:#fff;border-radius:8px;padding:16px;box-shadow:0 1px 4px rgba(16,24,40,0.05);border:1px solid rgba(16,24,40,0.04)}
-    .card h3{margin:0 0 8px 0;font-size:1rem}
-    .card p{margin:0;color:var(--muted);font-size:0.95rem}
-    .contact .list{display:flex;flex-direction:column;gap:8px;color:var(--muted)}
-    .contact a{color:var(--accent);text-decoration:none}
-    .footer{margin-top:48px;padding:20px 0;color:var(--muted);font-size:0.9rem;text-align:center}
-    @media (max-width:420px){.name{font-size:1.6rem}.container{padding:28px 16px}}
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--background);
+    }
+
+    body {
+      margin: 0;
+      min-width: 0;
+      overflow-x: hidden;
+      color: var(--text);
+      background: var(--background);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(100% - 40px, 960px);
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-links a:focus-visible,
+    .nav-links a:hover,
+    .text-link:focus-visible,
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 48px;
+      padding: 96px 0 88px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin: 0 0 24px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(54px, 9vw, 88px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2.6vw, 24px);
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-mark {
+      width: 96px;
+      height: 96px;
+      border: 1px solid #cdd9f3;
+      border-radius: 28px 28px 28px 6px;
+      background: var(--accent-soft);
+      box-shadow: inset 0 0 0 12px var(--surface);
+    }
+
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 56px;
+    }
+
+    .section-label {
+      margin: 3px 0 0;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 28px;
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .about-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .about-copy p:last-child { margin-bottom: 0; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .card-number {
+      display: block;
+      margin-bottom: 38px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 34px;
+      border-radius: 18px;
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .contact-box p {
+      max-width: 510px;
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.65;
+    }
+
+    .contact-box .text-link {
+      flex: 0 0 auto;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .page { width: min(100% - 32px, 960px); }
+      .nav { min-height: 64px; }
+      .nav-links { gap: 14px; font-size: 13px; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 72px 0 64px;
+      }
+      .hero-mark { display: none; }
+      section { padding: 60px 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 22px; }
+      .projects { grid-template-columns: 1fr; }
+      .contact-box { align-items: flex-start; flex-direction: column; padding: 26px; }
+      footer { flex-direction: column; gap: 8px; }
+    }
+
+    @media (max-width: 390px) {
+      .nav-links a:first-child { display: none; }
+      h1 { font-size: 52px; }
+      .intro { font-size: 18px; }
+      .card { padding: 24px; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header" role="banner" aria-label="页眉">
-      <div class="name">郑策</div>
-      <div class="tagline">西雅图华盛顿大学 · 大四 — 寻找 AI 相关实习；有自媒体运营经验。</div>
+  <div class="page">
+    <nav class="nav" aria-label="主导航">
+      <a class="logo" href="#top">郑策</a>
+      <div class="nav-links">
+        <a href="#about">关于我</a>
+        <a href="#work">我的作品</a>
+        <a href="#contact">联系方式</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div>
+        <p class="eyebrow">正在寻找 AI 相关实习</p>
+        <h1>郑策</h1>
+        <p class="intro">华盛顿大学新闻专业学生，关注 AI、内容与传播，也拥有自媒体创作经验。</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true"></div>
     </header>
 
     <main>
-      <section class="section about" id="about" aria-labelledby="about-title">
-        <h2 id="about-title">关于我</h2>
-        <p>我叫郑策，目前就读于西雅图华盛顿大学，大四。</p>
-        <p>我对人工智能与新闻、内容创作的交叉应用很感兴趣，正在学习相关技术与数据分析。</p>
-        <p>我希望在实习中参与 AI 产品或数据分析相关工作，并把自媒体经验带入内容策略与传播。</p>
-      </section>
-
-      <section class="section work" id="work" aria-labelledby="work-title">
-        <h2 id="work-title">我的作品</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>自媒体内容系列</h3>
-            <p>负责选题、脚本与剪辑，聚焦议题传播与受众增长。（请把这里替换为你的网盘或平台链接）</p>
-          </article>
-
-          <article class="card">
-            <h3>新闻专题与数据分析</h3>
-            <p>基于数据的短期专题报道，包含数据可视化与深度解读。（请替换为项目链接或 PDF）</p>
-          </article>
+      <section id="about" aria-labelledby="about-title">
+        <div class="section-grid">
+          <p class="section-label">About</p>
+          <div class="about-copy">
+            <h2 id="about-title">关于我</h2>
+            <p>我叫郑策，目前就读于西雅图华盛顿大学，是一名大四新闻专业学生。</p>
+            <p>我正在学习如何把新闻叙事、内容创作与人工智能工具结合起来。</p>
+            <p>我希望加入 AI 相关团队，在真实项目中贡献内容洞察、自媒体经验与传播能力。</p>
+          </div>
         </div>
       </section>
 
-      <section class="section contact" id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">联系方式</h2>
-        <div class="list">
-          <div>邮箱：<a href="mailto:zhengce6050@gmail.com">zhengce6050@gmail.com</a></div>
-          <div>作品链接：在作品卡片中放置网盘或平台链接；或在简历 PDF 中放完整收藏夹链接。</div>
+      <section id="work" aria-labelledby="work-title">
+        <div class="section-grid">
+          <p class="section-label">Selected Work</p>
+          <div>
+            <h2 id="work-title">我的作品</h2>
+            <div class="projects">
+              <article class="card">
+                <span class="card-number">01</span>
+                <h3>自媒体内容创作</h3>
+                <p>从选题、脚本到发布，持续实践面向真实受众的内容表达与传播。</p>
+              </article>
+              <article class="card">
+                <span class="card-number">02</span>
+                <h3>AI × 新闻实践</h3>
+                <p>探索人工智能工具在信息整理、内容生产与新闻传播场景中的应用。</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <div class="section-grid">
+          <p class="section-label">Contact</p>
+          <div>
+            <h2 id="contact-title">联系方式</h2>
+            <div class="contact-box">
+              <p>如果你正在寻找一位理解内容、传播与 AI 的实习生，欢迎和我聊聊。</p>
+              <a class="text-link" href="mailto:zhengce6050@gmail.com">发送邮件</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
-      小提示：把此文件命名为 index.html，上传到 GitHub 仓库并启用 Pages 即可发布。
+    <footer>
+      <span>© 2026 郑策</span>
+      <span>Seattle, Washington</span>
     </footer>
   </div>
 </body>
